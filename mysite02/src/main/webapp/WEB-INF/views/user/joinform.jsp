@@ -12,7 +12,8 @@
 		<div id="content">
 			<div id="user">
 
-				<form id="join-form" name="joinForm" method="" action="">
+				<form id="join-form" name="joinForm" method="post" action="<%=request.getContextPath() %>/user">
+					<input type="hidden" name="a" value="join">
 					<label class="block-label" for="name">이름</label>
 					<input id="name" name="name" type="text" value="">
 
