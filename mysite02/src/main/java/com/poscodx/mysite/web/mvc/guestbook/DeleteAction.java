@@ -1,4 +1,4 @@
-package com.douzone.mysite.web.mvc.guestbook;
+package com.poscodx.mysite.web.mvc.guestbook;
 
 import java.io.IOException;
 
@@ -6,10 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.douzone.mysite.dao.GuestbookDao;
-import com.douzone.web.mvc.Action;
-import com.douzone.web.util.MvcUtil;
-
+import com.poscodx.mysite.dao.GuestbookDao;
+import com.poscodx.web.mvc.Action;
 
 public class DeleteAction implements Action {
 	@Override
@@ -19,6 +17,6 @@ public class DeleteAction implements Action {
 		String password = request.getParameter("password");
 		
 		new GuestbookDao().deleteByNoAndPassword(no, password);
-		MvcUtil.redirect(request.getContextPath() + "/guestbook", request, response);
+		response.sendRedirect(request.getContextPath() + "/guestbook");
 	}
 }

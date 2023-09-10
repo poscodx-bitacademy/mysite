@@ -1,4 +1,4 @@
-package com.douzone.mysite.controller;
+package com.poscodx.mysite.controller;
 
 import java.io.IOException;
 
@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.douzone.mysite.web.mvc.guestbook.GuestbookActionFactory;
-import com.douzone.web.mvc.Action;
-import com.douzone.web.mvc.ActionFactory;
+import com.poscodx.mysite.web.mvc.guestbook.GuestbookActionFactory;
+import com.poscodx.web.mvc.Action;
+import com.poscodx.web.mvc.ActionFactory;
 
 
 public class GuestbookController extends HttpServlet {

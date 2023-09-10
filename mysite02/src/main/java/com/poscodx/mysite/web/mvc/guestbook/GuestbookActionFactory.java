@@ -1,9 +1,9 @@
-package com.douzone.mysite.web.mvc.guestbook;
+package com.poscodx.mysite.web.mvc.guestbook;
 
-import com.douzone.web.mvc.Action;
-import com.douzone.web.mvc.ActionFactory;
+import com.poscodx.web.mvc.Action;
+import com.poscodx.web.mvc.ActionFactory;
 
-public class GuestbookActionFactory extends ActionFactory {
+public class GuestbookActionFactory implements ActionFactory {
 
 	@Override
 	public Action getAction(String actionName) {
