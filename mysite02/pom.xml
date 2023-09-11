@@ -18,11 +18,20 @@
 	</properties>
 	
 	<dependencies>
+		<!-- jstl -->
+		<dependency>
+		    <groupId>jstl</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		
+		<!-- mariadb jdbc driver -->		
 		<dependency>
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>3.0.8</version>
-		</dependency>		
+		</dependency>
+				
 	</dependencies>
 	
 	<build>
