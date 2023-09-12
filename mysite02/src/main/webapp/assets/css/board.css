@@ -1,4 +1,4 @@
-@CHARSET "UTF-8";
+@charset "UTF-8";
 @import "mysite.css";
 
 #board { margin:20px auto;	width:550px; }
@@ -43,6 +43,10 @@ input#kwd	{
 .tbl-ex td	{ 
 	padding:8px;
 	text-align:center; 	 
+}
+
+.tbl-ex td:nth-child(2) {
+	text-align: left;
 }
 	
 .tbl-ex th	{ 
@@ -96,7 +100,7 @@ div.bottom {
 
 div.bottom a { 
 	text-decoration:none; 
-	dispaly:block;
+	display:block;
 }
 
 a#new-book	 { 
@@ -128,6 +132,25 @@ a.del	{
 	display:block;
 	width:20px;
 	height:20px; 
-	background:url("/mysite/assets/images/recycle.png") no-repeat 0 0;
+	background:url("/mysite02/assets/images/recycle.png") no-repeat 0 0;
 	font-size:0;
 }
+
+/*
+	게시판 리스트 페이징
+*/
+div.pager {
+	width:100%;
+	text-align:center;
+}
+div.pager  ul {
+	height:20px;
+	margin:10px auto;
+}
+div.pager  ul li 			{ color:#ddd; display:inline-block; margin:5px 0; width:20px ; font-weight:bold; }
+div.pager  ul li.selected	{ font-size:16px; text-decoration: underline; color:#f40808 }
+div.pager  ul li a,
+div.pager  ul li a:visited,
+div.pager  ul li a:link,
+div.pager  ul li a:active	{ text-decoration: none; color:#555 }
+div.pager  ul li a:hover	{ text-decoration: none; color:#f00 }
