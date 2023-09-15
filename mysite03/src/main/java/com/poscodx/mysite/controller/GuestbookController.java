@@ -35,13 +35,13 @@ public class GuestbookController {
 	@RequestMapping(value="/delete/{no}", method=RequestMethod.POST)
 	public String delete(@PathVariable("no") Long no, @RequestParam(value="password", required=true, defaultValue="") String password) {
 		guestbookService.deleteContents(no, password);
-		return "redirect:/";
+		return "redirect:/guestbook";
 	}
 
 	@RequestMapping("add")
 	public String add(GuestbookVo vo) {
 		guestbookService.addContents(vo);
-		return "redirect:/";
+		return "redirect:/guestbook";
 	}
 	
 }
