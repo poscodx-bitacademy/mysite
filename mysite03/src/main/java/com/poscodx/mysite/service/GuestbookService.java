@@ -18,10 +18,10 @@ public class GuestbookService {
 	}
 	
 	public Boolean deleteContents(Long no, String password) {
-		return false;
+		return guestbookRepository.deleteByNoAndPassword(no, password);
 	}
 	
 	public Boolean addContents(GuestbookVo vo) {
-		return false;
+		return guestbookRepository.insert(vo);
 	}
 }
