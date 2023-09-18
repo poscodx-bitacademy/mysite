@@ -12,6 +12,25 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
+	<!-- Connection Pool DataSource-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" />
+		<property name="url" value="jdbc:mariadb://192.168.0.172:3307/webdb?charset=utf8" />
+		<property name="username" value="webdb" />
+		<property name="password" value="webdb" />
+	</bean>
+
+	<!-- SqlSessionFactory --> 
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource" /> 
+		<property name="configLocation" value="classpath:mybatis/configuration.xml" /> 
+	</bean>
+	
+	<!-- SqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+	
 	<context:annotation-config />
 	<context:component-scan base-package="com.poscodx.mysite.service, com.poscodx.mysite.repository">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
