@@ -1,4 +1,4 @@
-package com.douzone.mysite.vo;
+package com.poscodx.mysite.vo;
 
 public class BoardVo {
 	private Long no;
