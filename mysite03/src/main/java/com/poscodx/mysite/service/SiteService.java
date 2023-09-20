@@ -12,10 +12,14 @@ public class SiteService {
 	@Autowired
 	private SiteRepository repository;
 	
+	@Autowired
+	private SiteRepository sietRepository;
+
 	public SiteVo getSite() {
-		return null;
+		return sietRepository.find();
 	}
 	
-	public void UpdateSite(SiteVo vo) {
+	public void updateSite(SiteVo vo) {
+		sietRepository.update(vo);
 	}
 }

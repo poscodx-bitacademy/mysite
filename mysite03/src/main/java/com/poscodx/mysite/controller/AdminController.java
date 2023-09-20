@@ -2,10 +2,13 @@ package com.poscodx.mysite.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.poscodx.mysite.security.Auth;
 import com.poscodx.mysite.service.SiteService;
+import com.poscodx.mysite.vo.SiteVo;
 
 @Auth(Role="ADMIN")
 @Controller
@@ -15,8 +18,16 @@ public class AdminController {
 	private SiteService siteService;
 
 	@RequestMapping("")
-	public String main() {
+	public String main(Model model) {
+		SiteVo vo = siteService.getSite();
+		model.addAttribute("siteVo", vo);
 		return "admin/main";
+	}
+
+	@RequestMapping("/main/update")
+	public String update(SiteVo vo) {
+		siteService.updateSite(vo);
+		return "redirect:/admin";
 	}
 	
 	@RequestMapping("/guestbook")
