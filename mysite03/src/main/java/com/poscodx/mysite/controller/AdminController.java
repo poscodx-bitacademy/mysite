@@ -4,14 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.poscodx.mysite.security.Auth;
 import com.poscodx.mysite.service.SiteService;
 
+@Auth(Role="ADMIN")
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired
 	private SiteService siteService;
-	
+
 	@RequestMapping("")
 	public String main() {
 		return "admin/main";
@@ -30,6 +32,5 @@ public class AdminController {
 	@RequestMapping("/user")
 	public String user() {
 		return "admin/user";
-	}
-	
+	}	
 }
