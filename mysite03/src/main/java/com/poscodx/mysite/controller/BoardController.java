@@ -78,8 +78,8 @@ public class BoardController {
 
 	@RequestMapping(value="/modify", method=RequestMethod.POST)	
 	public String modify(
-		HttpSession session, 
-		@ModelAttribute BoardVo boardVo,
+		HttpSession session,		
+		BoardVo boardVo,
 		@RequestParam(value="p", required=true, defaultValue="1") Integer page,
 		@RequestParam(value="kwd", required=true, defaultValue="") String keyword) {		
 		// Access Control(접근 제어)
