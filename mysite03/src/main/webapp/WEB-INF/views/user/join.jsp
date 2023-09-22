@@ -16,7 +16,6 @@
 		<c:import url="/WEB-INF/views/includes/header.jsp" />
 		<div id="content">
 			<div id="user">
-
 				<form:form
 					modelAttribute="userVo" 
 					id="join-form"
@@ -38,31 +37,22 @@
 					</p>
 					
 					<label class="block-label" for="email">이메일</label>
-					<input id="email" name="email" type="text" value="">
+					<form:input path="email" />
 					<input type="button" value="중복체크">
 					<p style="padding:3px 0 5px 0; text-align: left; color: #f00">
-						<spring:hasBindErrors name="userVo">
-							<c:if test="${errors.hasFieldErrors('email') }">
-								${errors.getFieldError("email").defaultMessage }
-							</c:if> 
-						</spring:hasBindErrors>
+						<form:errors path="email" />
 					</p>
 					
 					<label class="block-label"><spring:message code="user.join.label.password" /></label>
-					<input name="password" type="password" value="">
+					<form:password path="password" />
 					<p style="padding:3px 0 5px 0; text-align: left; color: #f00">
-						<spring:hasBindErrors name="userVo">
-							<c:if test="${errors.hasFieldErrors('password') }">
-								${errors.getFieldError("password").defaultMessage }
-							</c:if> 
-						</spring:hasBindErrors>
+						<form:errors path="password" />
 					</p>
-
 					
 					<fieldset>
 						<legend>성별</legend>
-						<label>여</label> <input type="radio" name="gender" value="female" checked="checked">
-						<label>남</label> <input type="radio" name="gender" value="male">
+						<form:radiobutton path="gender" value="female" label="여" checked="checked" />
+						<form:radiobutton path="gender" value="male" label="남" checked="checked" />
 					</fieldset>
 					
 					<fieldset>
