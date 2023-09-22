@@ -15,7 +15,7 @@ import com.poscodx.mysite.exception.FileUploadServiceException;
 @Service
 public class FileUploadService {
 	private static String SAVE_PATH = "/mysite-uploads";
-	private static String URL_PATH = "/images";
+	private static String URL_PATH = "/assets/upload-images";
 	
 	public String restore(MultipartFile file) {
 		String url = null;
