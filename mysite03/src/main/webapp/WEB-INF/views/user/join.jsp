@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,13 +17,22 @@
 		<div id="content">
 			<div id="user">
 
-				<form id="join-form" name="joinForm" method="post" action="${pageContext.request.contextPath }/user/join">
+				<form:form
+					modelAttribute="userVo" 
+					id="join-form"
+					name="joinForm"
+					method="post"
+					action="${pageContext.request.contextPath }/user/join">
+					
 					<label class="block-label" for="name">이름</label>
-					<input id="name" name="name" type="text" value="${userVo.name }">
+					<form:input path="name" />
 					<p style="padding:3px 0 5px 0; text-align: left; color: #f00">
 						<spring:hasBindErrors name="userVo">
 							<c:if test="${errors.hasFieldErrors('name') }">
+								<!--
 								${errors.getFieldError("name").defaultMessage }
+								-->
+								<spring:message code='${errors.getFieldError("name").codes[0]}' />
 							</c:if> 
 						</spring:hasBindErrors>
 					</p>
@@ -38,7 +48,7 @@
 						</spring:hasBindErrors>
 					</p>
 					
-					<label class="block-label">패스워드</label>
+					<label class="block-label"><spring:message code="user.join.label.password" /></label>
 					<input name="password" type="password" value="">
 					<p style="padding:3px 0 5px 0; text-align: left; color: #f00">
 						<spring:hasBindErrors name="userVo">
@@ -63,7 +73,7 @@
 					
 					<input type="submit" value="가입하기">
 					
-				</form>
+				</form:form>
 			</div>
 		</div>
 		<c:import url="/WEB-INF/views/includes/navigation.jsp" />

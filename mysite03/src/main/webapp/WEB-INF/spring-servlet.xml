@@ -49,6 +49,15 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	   <property name="basenames">
+	      <list>
+			<value>messages/messages_ko</value>
+			<value>messages/messages_en</value>
+	      </list>
+	   </property>
+	</bean>
+	
 	<!-- View Resolver -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	   <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
