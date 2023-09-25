@@ -45,7 +45,7 @@ public class AdminController {
 			vo.setProfile(profile);
 		}		
 		siteService.updateSite(vo);
-		
+		servletContext.setAttribute("siteVo", vo);
 		
 		return "redirect:/admin";
 	}
