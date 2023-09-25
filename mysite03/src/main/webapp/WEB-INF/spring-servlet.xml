@@ -46,6 +46,11 @@
 			<mvc:exclude-mapping path="/user/logout" />
 			<bean class="com.poscodx.mysite.security.AuthInterceptor" />
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/assets/**"/>
+			<bean class="com.poscodx.mysite.interceptor.SiteInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 	
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -75,7 +80,7 @@
 	   <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 	   <property name="prefix" value="/WEB-INF/views/" />
 	   <property name="suffix" value=".jsp" />
-	   <property name="exposeContextBeansAttributes" value="true" />
+	   <property name="exposeContextBeansAsAttributes" value="true" />
 	   <property name="exposedContextBeanNames">
 			<list>
 				<value>site</value>
