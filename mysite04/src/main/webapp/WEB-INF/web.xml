@@ -6,8 +6,12 @@
 	<display-name>mysite04</display-name>
 	
 	<context-param>
+	     <param-name>contextClass</param-name>
+	     <param-value>org.springframework.context.annotation.AnnotationConfigApplicationContext</param-value>
+	</context-param> 	
+	<context-param>
 	     <param-name>contextConfigLocation</param-name>
-	     <param-value>classpath:applicationContext.xml</param-value>
+	     <param-value>com.poscodx.mysite.config.AppConfig</param-value>
 	</context-param> 	
 	
 	<!-- ContextLoad Listener -->
