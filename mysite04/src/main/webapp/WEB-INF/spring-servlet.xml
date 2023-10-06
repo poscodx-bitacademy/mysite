@@ -10,26 +10,13 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	<!-- auto proxy -->
-	<aop:aspectj-autoproxy />
 
-	<!-- 
-		Validator
-		Default Servlet Handler
-		Message Converter
-		Argument Resolver
-	 -->
+
 	<mvc:annotation-driven>
-		<!-- Argument Resolvers -->
 		<mvc:argument-resolvers>
 			<bean class="com.poscodx.mysite.security.AuthUserHandlerMethodArgumentResolver" />
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
-
-	<!-- Default Servlet Handler -->
-	<mvc:default-servlet-handler/>
-
-	<!-- Interceptors -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/user/auth"/>
@@ -52,17 +39,22 @@
 			<bean class="com.poscodx.mysite.interceptor.SiteInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
+
 	
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-	   <property name="basenames">
-	      <list>
-			<value>messages/messages_ko</value>
-			<value>messages/messages_en</value>
-	      </list>
-	   </property>
-	</bean>
+
+
+
 	
-	<!-- Multipart Resolver -->
+	
+	
+
+		
+
+
+	
+
+
+
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 최대업로드 가능한 바이트크기 -->
 		<property name="maxUploadSize" value="52428800" />
@@ -71,26 +63,7 @@
 		<!-- defaultEncoding -->
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>
-
-	<!-- mvc url-resource mapping -->
 	<mvc:resources mapping="/assets/upload-images/**" location="file:/mysite-uploads/" />
-		
-	<!-- View Resolver -->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	   <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-	   <property name="prefix" value="/WEB-INF/views/" />
-	   <property name="suffix" value=".jsp" />
-	   <property name="exposeContextBeansAsAttributes" value="true" />
-	   <property name="exposedContextBeanNames">
-			<list>
-				<value>site</value>
-			</list>	   	
-	   </property>
-	</bean>
 
-	<!-- ApplicationConextEventListener -->
-	<bean class="com.poscodx.mysite.event.ApplicationContextEventListener" />
 	
-	<context:annotation-config />
-	<context:component-scan base-package="com.poscodx.mysite.controller, com.poscodx.mysite.exception" />
 </beans>
