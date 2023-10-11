@@ -29,7 +29,7 @@ spring:
    # message resources(internationalization, i18n)
    messages:
       always-message-format: true
-      basename: messages/messages_ko      
+      basename: web/messages/messages_ko      
       encoding: utf-8
    
    # aop
@@ -58,4 +58,22 @@ server:
       context-path: /mysite06
       encoding:
          charset: utf-8
-         enabled: true          
+         enabled: true
+         
+# logging
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: /${spring.application.name}-logs/exception.%d{yyyy-MM-dd}.%i.log.zip
+         max-file-size: 200MB
+         max-history: 10 
+   file: /${spring.application.name}-logs/exception.log
+   level:
+      root: INFO
+      com:
+         poscodx:
+            mysite:
+               exception: ERROR
