@@ -12,9 +12,11 @@ spring:
    mvc:
       static-path-pattern: /assets/**
       throw-exception-if-no-handler-found: true
-      view:
-         prefix: /WEB-INF/views/
-         suffix: .jsp
+ #     view:
+ #        prefix: /WEB-INF/views/
+ #        suffix: .jsp
+ #        exposeContextBeansAsAttributes: true
+         
    web:
       resources:
          static-locations: classpath:/assets/, file:/mysite-uploads/         
@@ -28,8 +30,8 @@ spring:
 
    # message resources(internationalization, i18n)
    messages:
-      always-message-format: true
-      basename: web/messages/messages_ko      
+      always-use-message-format: true
+      basename: web/messages/messages   
       encoding: utf-8
    
    # aop
