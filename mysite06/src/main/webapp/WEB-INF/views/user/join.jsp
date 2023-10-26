@@ -84,7 +84,7 @@ $(function(){
 			dataType: 'json',
 			success: function(response) {
 				if(response.result !== 'success') {
-					console.error(reponse.message);
+					console.error(response.message);
 					return;
 				}
 				
