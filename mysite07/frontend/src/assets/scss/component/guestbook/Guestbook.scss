@@ -1,0 +1,16 @@
+.Guestbook {
+  width: 540px;
+  margin: 0 auto;
+  background-color: #fff;
+
+  h2 {
+    color: #5C5C5C;
+    text-align: left;
+    margin-bottom: 10px;
+    background: url('../../../images/component/guestbook/guestbook.png') 0 0 no-repeat;
+    background-size: 35px;
+    padding-left: 40px;
+    height: 35px;
+    line-height: 35px;
+  }
+}

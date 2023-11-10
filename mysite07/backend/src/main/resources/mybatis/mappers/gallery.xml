@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gallery">
+	<insert id="insert" parameterType="galleryvo">
+		<![CDATA[
+		insert into gallery values(null, #{comments }, #{imageUrl })
+		]]>
+	  	<selectKey keyProperty="no" resultType="long" order="AFTER">
+			<![CDATA[
+		  	select last_insert_id()
+	  		]]>
+	  	</selectKey>		
+	</insert>
+
+	<delete id="delete" parameterType="long">
+		<![CDATA[
+		delete from gallery where no=#{no }
+		]]>
+	</delete>
+	
+	<select id="findAll" resultType="galleryvo">
+		<![CDATA[
+		  select no, image_url, comments from gallery order by no desc
+		]]>
+	</select>
+</mapper>

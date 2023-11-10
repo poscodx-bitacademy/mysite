@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.ImageListItem {
+    position:relative;
+    float:left;
+    width:114px;
+    height:114px;
+    padding:2px;
+    margin:0 0 10px 10px;
+    border:1px solid #c0c0c0;
+    background-color:#e9e9e9;
+    overflow-y:hidden;
+
+    a,
+    span {
+        display: block;
+        font-size: 0;
+        outline: none;
+    }
+
+    span {
+        width:114px;
+        height:114px;
+        background-size: 114px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    a {
+        position: absolute;
+        cursor: pointer;
+        right: 2px;
+        top: 3px;
+        width: 20px;
+        height: 20px;
+        background: url('../../../images/component/gallery/delete-image.png') 0 0 no-repeat;
+        background-size:18px;
+        display: none;
+    }
+
+    &:hover a {
+        display:block;
+    }
+}

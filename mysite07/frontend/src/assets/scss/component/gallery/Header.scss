@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.Header {
+  h2 {
+    color: #5c5c5c;
+    padding-left: 40px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    background: url('../../../images/component/gallery/gallery.png') 0 0 no-repeat;
+    background-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  .UploadButton {
+    display: block;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #2080d0;
+    background-color: #e8ecf6;
+    outline: none;
+    margin-bottom:10px;
+  }
+
+}
+
+.FormUpload {
+  padding: 5px;
+  text-align: left;
+  font-size: .75em;
+
+  label {
+    font-size: 12px;
+  }
+}

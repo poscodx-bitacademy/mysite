@@ -1,0 +1,38 @@
+.Message {
+    width: 100%;
+    margin-top: 20px;
+    background: url('../../../images/component/guestbook/user.png') 0 20px no-repeat;
+    padding-left: 50px;
+    position: relative;
+
+    strong {
+        text-align: left;
+        display:block;
+        color: #aaa;
+    }
+
+    p {
+        text-align: left;
+        width: 465px;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #EAECEC;
+        background-color: #FAFAFA;
+        line-height: 1.75em;
+        border-radius: 4px;
+    }
+
+    a {
+        position:absolute;
+        cursor: pointer;
+        width:20px;
+        height:20px;
+        font-size:0;
+        background:url('../../../images/component/guestbook/delete.png') 0 0 no-repeat;
+        left:20px;
+        top:40px;
+        outline:none;
+        text-align: left;
+        display:block;
+    }
+}

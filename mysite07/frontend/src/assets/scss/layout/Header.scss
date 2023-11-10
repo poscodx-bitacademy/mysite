@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+header {
+  h1 {
+    height: 70px;
+    line-height: 70px;
+    margin: 0;
+    padding-left: 10px;
+    color: #79B30B;
+
+    a {
+      color: #79B30B;
+      text-decoration: none;
+
+      &:hover {
+        color: #79B30B;
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: #79B30B;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: #79B30B;
+        text-decoration: none;
+      }
+    }
+  }
+
+  nav.UserMenu {
+    height: 20px;
+    margin: 0 20px 10px 0;
+
+    strong, a {
+      display: block;
+      float: right;
+      color: #4F4F4F;
+      font-weight: bold;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+  }
+}

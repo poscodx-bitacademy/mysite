@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+nav.Main {
+  float: left;
+  width: 120px;
+
+  a {
+    display: block;
+    color: #4F4F4F;
+    background-color: #E9E9E9;
+    width: 98px;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border: 1px solid #DADADA;
+    margin-top: -1px;
+
+    &:hover {
+      color: #4F4F4F;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #4F4F4F;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #4F4F4F;
+      text-decoration: none;
+    }
+  }
+
+  :global(a.active) {
+    background-color: #e0e0e0;
+  }
+
+}
+

@@ -1,0 +1,100 @@
+spring:
+   application:
+      name: mysite07
+   profiles:
+      active: development
+
+---
+# common configuration
+spring:
+   mvc:
+      static-path-pattern: /assets/**
+      throw-exception-if-no-handler-found: true
+   web:
+      resources:
+         static-locations: classpath:/assets/, file:/mysite-uploads/
+   thymeleaf:
+      prefix: classpath:templates/
+      check-template-location: true
+      mode: HTML
+      suffix: .html
+      cache: false
+   servlet:
+      multipart:
+         enabled: true
+         max-file-size: 20MB
+         max-request-size: 100MB
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+
+         
+---
+# development configuration
+spring:
+   config:
+      activate:
+         on-profile: development
+   devtools:
+      livereload:
+         enabled: true
+   web:
+      resources:
+         static-locations: classpath:/assets/, file:/mysite-uploads/
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb   
+server:
+   port: 8080
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
+logging:
+   pattern:
+      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   level:
+      root: INFO         
+
+
+---
+#
+# production profile configuration
+#
+spring:
+   config:
+      activate:
+         on-profile: production
+   web:
+      resources:
+         static-locations: classpath:/assets/, file:/mysite-uploads/         
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://192.168.0.172:3306/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb   
+server:
+   port: 8088
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
+         max-history: 10
+   file:
+      name: logs/${spring.application.name}.log
+   level:
+      root: WARN
+      me:
+         kickscar:
+            mysite:
+               exception: ERROR

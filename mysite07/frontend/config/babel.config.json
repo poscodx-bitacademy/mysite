@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "ie": "11",
+          "edge": "80",
+          "firefox": "73",
+          "chrome": "82",
+          "opera": "69",
+          "safari": "13"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-throw-expressions"
+  ]
+}
